@@ -12,7 +12,12 @@ class FirstController extends AbstractController
     public function index(): Response
     {
         return $this->render('first/index.html.twig', [
-           'path' => '   '
+           'path' => '   ',
+            'tableau' =>[
+                ['firstname'=>'Abdoulaye','lastname'=>'Coundoul', 'age'=>'12'],
+                ['firstname'=>'Coura', 'lastname'=>'Gadji', 'age'=>'19'],
+                ['firstname'=>'CAG', 'lastname'=>'Symbole', 'age'=>'1'],
+            ]
         ]);
     }
 

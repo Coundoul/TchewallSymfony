@@ -5,9 +5,34 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Filtre</title>
+    <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}">
+    <title>Filtre && Users</title>
 </head>
 <body>
     <img src="{{ asset('asset/images/') ~ path | defaultImage }}" alt="">
+
+    <table class="table">
+
+        <tr class="table-active">
+            <td>Firstname</td>
+            <td>Lastname</td>
+            <td>Age</td>
+        </tr>
+
+        {% for users in tableau %}
+            <tr class="table-{% if loop.index is odd %}danger{% else %}warning{% endif %}">
+                <td>{{ users.firstname }}</td>
+                <td>{{ users.lastname }}</td>
+                <td>{{ users.age }}</td>
+            </tr>
+        {% else %}
+            <div class="alert-danger">
+                Les donnees sont vides
+            </div>
+        {% endfor %}
+
+    </table>
+
+
 </body>
 </html>
