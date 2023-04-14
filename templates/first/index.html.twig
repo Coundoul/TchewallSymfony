@@ -1,16 +1,12 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}">
-    <title>Filtre && Users</title>
-</head>
-<body>
+{% extends 'template.base.twig' %}
+
+
+{% block body %}
     <img src="{{ asset('asset/images/') ~ path | defaultImage }}" alt="">
 
+<p></p>
+
+    {% include 'fragments/date-jour.html.twig' %}
     <table class="table">
 
         <tr class="table-active">
@@ -32,7 +28,13 @@
         {% endfor %}
 
     </table>
+{% endblock %}
 
 
-</body>
-</html>
+{% block Title %}
+    Users
+{% endblock %}
+
+{% block PageTitle %}
+    Users
+{% endblock %}

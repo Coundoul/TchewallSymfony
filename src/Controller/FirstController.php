@@ -21,6 +21,12 @@ class FirstController extends AbstractController
         ]);
     }
 
+    #[Route('/template', name: 'template')]
+    public function template(): Response
+    {
+        return $this->render('template.base.twig');
+    }
+
     #[Route('/multi/{entier1<\d+>}/{entier2<\d+>}',
         name:'multiplication',
         //requirements: ['entier1'=>'\d+', 'entier2'=>'\d+']

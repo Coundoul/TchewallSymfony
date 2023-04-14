@@ -1,33 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}">
-    <title>ToDo List</title>
-</head>
-<body>
-    {% for message in app.session.flashBag.get('info') %}
-        <div class="alert alert-info">
-            {{ message }}
-        </div>
-    {% endfor %}
+{% extends 'template.base.twig' %}
 
-    {% for message in app.session.flashBag.get('success') %}
-        <div class="alert alert-success">
-            {{ message }}
-        </div>
-    {% endfor %}
 
-    {% for message in app.session.flashBag.get('error') %}
-        <div class="alert alert-danger">
-            {{ message }}
-        </div>
-    {% endfor %}
+{% block Title %}
+    To-DO
+{% endblock %}
 
-    <h1>Liste des ToDo : </h1>
+
+
+{% block body %}
+
+{% block PageTitle %} Liste des ToDo : {% endblock %}
     <ol class="list-group">
         {% for cle, valeur in app.session.get('todos') %}
             <li class="list-group-item">
@@ -35,6 +17,4 @@
             </li>
         {% endfor %}
     </ol>
-
-</body>
-</html>
+{% endblock %}
