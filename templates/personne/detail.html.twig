@@ -1,0 +1,19 @@
+{% extends 'template.base.twig' %}
+
+
+{% block body %}
+    <div class="row">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ personne.firstname }}</h5>
+                    <p class="card-text">{{ personne.name }}</p>
+                    <a href="#" class="btn btn-primary">{{ personne.age }}</a>
+                </div>
+            </div>
+    </div>
+{% endblock %}
+
+
+{% block PageTitle %}
+    Detail Personne {{ personne.id}}
+{% endblock %}

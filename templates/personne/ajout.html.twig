@@ -1,0 +1,15 @@
+{% extends 'template.base.twig' %}
+
+
+{% block body %}
+    {{ dump(personne) }}
+    <div class="alert alert-success">
+        {{ personne.firstname }} ||  {{ personne.name }} || {{ personne.age }}
+    </div>
+
+{% endblock %}
+
+
+{% block title %}
+    Manipulation de la classe Doctrine
+{% endblock %}
