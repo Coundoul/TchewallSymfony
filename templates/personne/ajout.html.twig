@@ -2,9 +2,15 @@
 
 
 {% block body %}
-    {{ dump(personne) }}
-    <div class="alert alert-success">
-        {{ personne.firstname }} ||  {{ personne.name }} || {{ personne.age }}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.firstname) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.name) }}
+        </div>
+        {{ form_rest(form) }}
     </div>
 
 {% endblock %}
@@ -12,4 +18,13 @@
 
 {% block title %}
     Manipulation de la classe Doctrine
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        // In your Javascript (external .js resource or <script> tag)
+        $(document).ready(function() {
+            $('.select2').select2();
+        });
+    </script>
 {% endblock %}

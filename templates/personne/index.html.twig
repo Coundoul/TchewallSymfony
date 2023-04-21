@@ -6,9 +6,12 @@
         {% for personne in personnes %}
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">{{ personne.firstname }}</h5>
-                    <p class="card-text">{{ personne.name }}</p>
-                    <a href="{{ path('personne.detail', {id : personne.id}) }}" class="btn btn-primary">{{ personne.age }}</a>
+                    <h5 class="card-title">Prénom : {{ personne.firstname }}</h5>
+                    <h5 class="card-text">Nom : {{ personne.name }}</h5>
+                    <p class="card-text">Age : {{ personne.age }}</p>
+                    <a href="{{ path('personne.detail', {id : personne.id}) }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+                    <a href="{{ path('personne.add', {id : personne.id}) }}" class="btn btn-primary"><i class="fa-solid fa-user-pen"></i></a>
+                    <a href="{{ path('personne.supprimer', {id : personne.id}) }}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
                 </div>
             </div>
         {% endfor %}
@@ -17,7 +20,7 @@
 
 <div class="row mt-3">
 
-    {% if pagination %}
+    {% if pagination is defined and pagination %}
         <nav aria-label="Page navigation example">
             <ul class="col pagination">
                 {% if page != 1%}
